@@ -43,18 +43,18 @@ export default function ReferencesSection() {
     };
   }, []);
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-  };
-
+ const handleSubmit = (e: React.FormEvent<HTMLButtonElement>) => {
+  e.preventDefault();
+  console.log("Form submitted:", formData);
+};
   return (
     <div className="relative">
       {/* References Section */}
